@@ -112,7 +112,9 @@ export default class Adventure extends Component {
       apiKey: process.env.REACT_APP_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
-    let previousLog = this.state.event.fullLog.join("");
+    let previousLog = this.state.event.fullLog
+      ? this.state.event.fullLog.join("")
+      : this.state.previousLog.join("");
     let prompt = `Give ${this.state.character.name} 3 new, relevant, detailed, options for what to do next in the choose your own adventure game, keeping in mind context from above to make sure it is relevant. Avoid giving the same option multiple times. \n`;
     let AIprompt_holder = previousLog + "\n" + prompt;
     let AIprompt = AIprompt_holder.split(" ")
@@ -131,7 +133,7 @@ export default class Adventure extends Component {
         presence_penalty: 0.0,
       })
       .then((response) => {
-        console.log("choices test", response);
+        // console.log("choices test", response);
         let choices = response.data.choices[0].text;
         if (choices[0] === "\n") {
           choices = choices.slice(1, choices.length);
@@ -144,7 +146,7 @@ export default class Adventure extends Component {
           choices.split(" ")[0] === "Option"
           // choices.split(" ")[0] === ":"
         ) {
-          console.log("Option x: format detected", choices);
+          // console.log("Option x: format detected", choices);
           choices = choices.slice(7, choices.length);
         } else if (
           // choices.split(" ")[0] === "Option" ||
@@ -264,7 +266,7 @@ export default class Adventure extends Component {
       },
     })
       .then((response) => {
-        console.log("Event saved successfully.", response);
+        // console.log("Event saved successfully.", response);
       })
       .catch((error) => {
         console.log("Error creating event.", error);
@@ -351,7 +353,7 @@ export default class Adventure extends Component {
         const openai = new OpenAIApi(configuration);
         let previousLog = this.state.previousLog.join("");
         let action = `${this.state.character.name} the ${this.state.character.class} chooses ${x}. ${option}.`;
-        let prompt = `Progress the the story forward a short period of time. Give a clever, entertaining, detailed account of what happens next in an open ended way.`;
+        let prompt = `Progress the the story forward a short period of time. Give a clever, entertaining, interesting, detailed account of what happens next in an open ended way.`;
         let AIprompt_holder =
           previousLog + "\n" + action + "\n" + prompt + "\n";
         let AIprompt = AIprompt_holder.split(" ")

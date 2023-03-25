@@ -96,7 +96,7 @@ export default class CreateAdventure extends Component {
   };
 
   addAdventure = async (adventure, character) => {
-    console.log("new adventure:", adventure, character);
+    // console.log("new adventure:", adventure, character);
     Axios.post("adventure/add", adventure, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
