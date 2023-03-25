@@ -630,6 +630,7 @@ export default class App extends Component {
                 userList={this.state.users}
                 user={this.state.user}
                 createAchievement={this.createAchievement}
+                setAdventure={this.setAdventure}
               />
             }
           />

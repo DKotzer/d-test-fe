@@ -147,12 +147,13 @@ export default class Character extends Component {
               {this.props.name} the {this.props.class}
             </Card.Title>
             <Card.Text>
-              <span className='overflow-char'>{this.props.backstory}</span>
+              <span className='overflow-char'>{this.props.backstory}</span><br />
               Ability: {this.props.ability}
               <br />
               Weakness: {this.props.weakness}
               {!this.props.isFiltered ? (
                 <span>
+                  <br />
                   Created by:{" "}
                   <a href={`/profile/${this.props.user}`}>
                     {this.props.charUser}

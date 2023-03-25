@@ -97,7 +97,7 @@ export default class CreateAdventure extends Component {
     });
   };
 
-  addAdventure = (adventure, character) => {
+  addAdventure = async (adventure, character) => {
     console.log("new adventure:", adventure, character);
     Axios.post("adventure/add", adventure, {
       headers: {
@@ -131,8 +131,8 @@ export default class CreateAdventure extends Component {
         }
       })
       .catch((error) => {
-        console.log("Error creating adventure.", error);
-        console.log(error);
+        console.log("Error creating adventure.", error.message);
+        // console.log(error);
         this.props.setMessage(error.message, "danger");
       });
   };

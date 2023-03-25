@@ -13,9 +13,10 @@ export default class Adventures extends Component {
       userCharacters: [],
     };
   }
-  componentDidMount() {
-    this.loadAdventureList();
-    this.loadUserCharacters();
+  async componentDidMount() {
+    await Promise.all([this.loadAdventureList(), this.loadUserCharacters()]);
+    // this.loadAdventureList();
+    // this.loadUserCharacters();
   }
 
   loadAdventureList = () => {
@@ -149,7 +150,7 @@ export default class Adventures extends Component {
           <h1>Loading..</h1>
         </div>
       );
-    } 
+    }
     return (
       <div className='container-fluid my-5'>
         <h1 className='display-4'>Adventure List</h1>

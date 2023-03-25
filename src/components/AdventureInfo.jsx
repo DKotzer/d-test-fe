@@ -361,16 +361,17 @@ export default class AdventureInfo extends Component {
                 {this.state.adventure.genre} {this.state.adventure.length} to{" "}
                 {quest}.
               </span>
+              <br />
               Character: {this.state.character.name} (
               {this.state.character.class})<br></br>
               {!this.props.isFiltered ? (
                 <span>
                   Created by:{" "}
                   {this.props.adventure.user ? (
-                    // <a href={`/profile/${this.props.adventure.user}`}>
-                    <span className='by'>{this.state.advUser}</span>
+                    <a href={`/profile/${this.props.adventure.user}`}>
+                      <span className='by'>{this.state.advUser}</span>
+                    </a>
                   ) : (
-                    // </a>
                     this.state.advUser
                   )}
                 </span>
@@ -409,10 +410,7 @@ export default class AdventureInfo extends Component {
                   </Button>
                 </div>
               ) : (
-                <Button
-                  variant='secondary'
-                  // onClick={console.log(this.readAdventure)}
-                >
+                <Button variant='secondary' onClick={this.readAdventure}>
                   Read
                 </Button>
               )}
