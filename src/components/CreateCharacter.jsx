@@ -150,14 +150,14 @@ export default class CreateCharacter extends Component {
       this.state.newCharacter.name.toLowerCase().includes("saad iqbal") ||
       this.state.newCharacter.name.toLowerCase().includes("saad")
     ) {
-      // console.log("saad detected");
+      console.log("saad detected");
       character.image = "/images/class/saad.jpg";
     }
     if (
       this.state.newCharacter.name.toLowerCase().includes("martin") ||
       this.state.newCharacter.name.toLowerCase().includes("marty")
     ) {
-      // console.log("marty detected");
+      console.log("marty detected");
       character.image = "/images/class/martin.jpg";
     }
     console.log("add char test", character);
