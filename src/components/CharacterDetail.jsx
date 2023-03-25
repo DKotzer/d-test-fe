@@ -123,6 +123,7 @@ export default class CharacterDetail extends Component {
           userList={this.props.userList}
           advUser={advUser}
           advUserID={advUserID}
+          setAdventure={this.props.setAdventure}
         />
       );
     });
