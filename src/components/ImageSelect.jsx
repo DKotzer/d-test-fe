@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Navigate, Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import "./css/Banner.css";
 import "./css/Profile.css";
 import ProfileImage from "./ProfileImage";
 
-function ImageSelect({ currentUser, setMessage, setImage }) {
+function ImageSelect({ currentUser, setImage }) {
   const headers = {
     Authorization: "Bearer " + localStorage.getItem("token"),
   };

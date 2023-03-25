@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Card,
-  Tooltip,
-  OverlayTrigger,
-} from "react-bootstrap";
+import { Button, Card, Tooltip, OverlayTrigger } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
 import Log from "./Log";
 import Axios from "axios";
@@ -43,7 +38,7 @@ export default class Story extends Component {
           let event = this.state.adventure.events.find((v) => {
             return v._id === event_ID;
           });
-          console.log(event);
+          // console.log(event);
           this.setState({
             log: event.displayedLog,
             loadLog: true,

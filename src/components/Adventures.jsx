@@ -154,7 +154,7 @@ export default class Adventures extends Component {
     return (
       <div className='container-fluid my-5'>
         <h1 className='display-4'>Adventure List</h1>
-        {this.props.isFiltered ? (
+        {/* {this.props.isFiltered ? (
           <p className='display-8 text-white' style={{ textAlign: "center" }}>
             Explore the adventures you have begun.
           </p>
@@ -162,7 +162,7 @@ export default class Adventures extends Component {
           <p className='display-8 text-white' style={{ textAlign: "center" }}>
             Explore adventures around the world.
           </p>
-        )}
+        )} */}
         <div className='d-flex align-items-center container-fluid'>
           <img
             className='scroll-btn'

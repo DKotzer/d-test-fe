@@ -142,7 +142,7 @@ export default class MyAdventures extends Component {
           <br />
           <br />
 
-          <h1>Loading..</h1>
+          <h1>Create your first adventure</h1>
         </div>
       );
     }

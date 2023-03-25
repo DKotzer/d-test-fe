@@ -147,7 +147,8 @@ export default class Character extends Component {
               {this.props.name} the {this.props.class}
             </Card.Title>
             <Card.Text>
-              <span className='overflow-char'>{this.props.backstory}</span><br />
+              <span className='overflow-char'>{this.props.backstory}</span>
+              <br />
               Ability: {this.props.ability}
               <br />
               Weakness: {this.props.weakness}
@@ -173,12 +174,10 @@ export default class Character extends Component {
                 >
                   Cancel
                 </Button>
-              ) : (
-                // <Button variant='primary' onClick={this.handleCopyCharacterBtn}>
-                //   Copy
-                // </Button>
-                <span></span>
-              )}
+              ) : // <Button variant='primary' onClick={this.handleCopyCharacterBtn}>
+              //   Copy
+              // </Button>
+              null}
               <Button variant='secondary' onClick={this.characterDetail}>
                 Details
               </Button>

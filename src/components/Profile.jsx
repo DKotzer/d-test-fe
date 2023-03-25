@@ -155,7 +155,7 @@ export default function Profile({ currentUser, setMessage }) {
       .get(`/profile/${id}`, { headers })
       .then((response) => {
         response.data.user.activity = response.data.user.activity.reverse();
-        if (user != response.data.user) {
+        if (user !== response.data.user) {
           setUser(response.data.user);
         }
         setBio(response.data.user.biography);

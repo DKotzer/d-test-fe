@@ -1,19 +1,19 @@
-import axios from "axios";
+// import axios from "axios";
 import React from "react";
-import { useState } from "react";
-import jwt_decode from "jwt-decode";
+// import { useState } from "react";
+// import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "react-google-login";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 
 export default function GSignup({ login }) {
-  const [state, setState] = useState({
-    isAuth: false,
-    user: null,
-    message: null,
-    failMessage: null,
-    successMessage: "",
-  });
-  const navigate = useNavigate();
+  // const [state, setState] = useState({
+  //   isAuth: false,
+  //   user: null,
+  //   message: null,
+  //   failMessage: null,
+  //   successMessage: "",
+  // });
+  // const navigate = useNavigate();
 
   // const googleAuth = (response) => {
   //   axios({
@@ -57,6 +57,7 @@ export default function GSignup({ login }) {
             <img
               id='google-logo-img'
               src='images/logos/Google__G__Logo.svg.webp'
+              alt="google logo"
             ></img>
             <span> Sign in</span>
           </button>

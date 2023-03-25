@@ -88,7 +88,7 @@ export default class AdventureInfo extends Component {
       })
       .catch((err) => {
         console.log("Error fetching characters.");
-        console.log(err);
+        console.log(err.message);
         this.props.setMessage(
           err.message,
           "no characters found, please make one"
@@ -277,7 +277,7 @@ export default class AdventureInfo extends Component {
             "danger"
           );
         } else {
-          console.log("Event created successfully.", response);
+          // console.log("Event created successfully.", response);
           this.setState({
             event: response.data.event,
           });
@@ -345,7 +345,7 @@ export default class AdventureInfo extends Component {
       characterSelect = ["wat"];
     }
 
-    return this.state.character.name ? (
+    return this.state.character.name && this.state.advUser ? (
       <div>
         <Card className={css} style={{ width: "18rem", margin: "15px" }}>
           <Card.Img
@@ -378,27 +378,27 @@ export default class AdventureInfo extends Component {
               ) : null}
             </Card.Text>
             <div className='buttons-container'>
-              {this.state.isFiltered ? (
-                <Button
-                  className='continue'
-                  variant='primary'
-                  onClick={this.continueAdventure}
-                >
-                  Continue
-                </Button>
-              ) : this.state.isCopyingAdventure ? (
-                <Button
-                  variant='secondary'
-                  onClick={this.handleCopyAdventureBtn}
-                >
-                  Cancel
-                </Button>
-              ) : (
-                <div></div>
+              {
+                this.state.isFiltered ? (
+                  <Button
+                    className='continue'
+                    variant='primary'
+                    onClick={this.continueAdventure}
+                  >
+                    Continue
+                  </Button>
+                ) : this.state.isCopyingAdventure ? (
+                  <Button
+                    variant='secondary'
+                    onClick={this.handleCopyAdventureBtn}
+                  >
+                    Cancel
+                  </Button>
+                ) : null
                 // <Button variant='primary' onClick={this.handleCopyAdventureBtn}>
                 //   Copy
                 // </Button>
-              )}
+              }
 
               {this.state.isFiltered ? (
                 <div className='read-delete'>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Container, Button, Row, Col } from "react-bootstrap";
+// import { Container, Button, Row, Col } from "react-bootstrap";
 import GSignup from "./GSignup";
 // import axios from "axios";
 import "./Signup.scss";

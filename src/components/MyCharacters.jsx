@@ -29,9 +29,7 @@ export default class MyCharacters extends Component {
       .then((response) => {
         // console.log(response.data.characters);
         let characterFiltered = response.data.characters.filter((c) => {
-          if (c.user === this.props.user.id && c.user !== "unknown") {
-            return c.user;
-          }
+          return c.user === this.props.user.id && c.user !== "unknown";
         });
         this.setState({
           characters: characterFiltered.reverse(),
@@ -121,7 +119,7 @@ export default class MyCharacters extends Component {
           <br />
           <br />
           <br />
-          <h1>Loading..</h1>
+          <h1>Create your first Character</h1>
         </div>
       );
     }

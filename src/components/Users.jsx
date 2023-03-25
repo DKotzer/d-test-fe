@@ -21,24 +21,23 @@ function Users({
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const response = await axios.get("/users", {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        });
+        setUsers(response.data.users.reverse());
+        // console.log("setUsers", response.data.users.reverse());
+        return response;
+      } catch (err) {
+        console.error(err);
+        setMessage(err.message, "danger");
+      }
+    };
     getUsers();
   }, []);
-
-  const getUsers = async () => {
-    try {
-      const response = await axios.get("/users", {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
-      setUsers(response.data.users.reverse());
-      // console.log("setUsers", response.data.users.reverse());
-      return response;
-    } catch (err) {
-      console.error(err);
-      setMessage(err.message, "danger");
-    }
-  };
 
   const scrollLeft = () => {
     document.querySelector(".users-list").scrollLeft += 500;
@@ -51,7 +50,7 @@ function Users({
   return (
     <>
       <div className='section-explore container-fluid my-5'>
-        <h1 className='display-4'>Explore</h1>
+        <h1 className='display-4'>Users</h1>
         <div className='d-flex align-items-center'>
           <img
             className='scroll-btn'

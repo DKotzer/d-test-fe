@@ -121,7 +121,7 @@ export default class Characters extends Component {
     return (
       <div className='container-fluid my-5'>
         <h1 className='display-4'>Character List</h1>
-        {this.props.isFiltered ? (
+        {/* {this.props.isFiltered ? (
           <p className='display-8 text-white' style={{ textAlign: "center" }}>
             Explore the characters you have created.
           </p>
@@ -129,7 +129,7 @@ export default class Characters extends Component {
           <p className='display-8 text-white' style={{ textAlign: "center" }}>
             Explore characters from around the world.
           </p>
-        )}
+        )} */}
         <div className='d-flex align-items-center container-fluid'>
           <img
             className='scroll-btn'

@@ -324,7 +324,7 @@ export default class App extends Component {
             "danger"
           );
         } else {
-          console.log("Achievement created successfully.", response);
+          // console.log("Achievement created successfully.", response);
           // this.setState({
           //   event: response.data.event,
           // });

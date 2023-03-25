@@ -39,8 +39,8 @@ export default class Adventure extends Component {
     let rawImageURL = this.props.adventure.image;
     let hiResImageURL = rawImageURL.replace("setting/", "setting/hi_res/");
 
-    console.log("LOAD");
-    console.log("adventure loaded: ", this.props.adventure);
+    // console.log("LOAD");
+    // console.log("adventure loaded: ", this.props.adventure);
     // console.log("character loaded: ", this.props.character);
     this.setState({
       event: events.reverse()[0],
@@ -250,7 +250,7 @@ export default class Adventure extends Component {
   };
 
   loadOptions = () => {
-    console.log("loading options...");
+    // console.log("loading options...");
     this.setState({
       option1: this.state.event.options[0],
       option2: this.state.event.options[1],
@@ -285,7 +285,7 @@ export default class Adventure extends Component {
       },
     })
       .then((response) => {
-        console.log("Event created successfully.", response);
+        // console.log("Event created successfully.", response);
         this.setState({
           event: response.data.event,
           adventure: {
@@ -313,7 +313,7 @@ export default class Adventure extends Component {
         if (response.data.adventure.events.length > 4) {
           this.props.createAchievement(3);
         }
-        console.log("Adventure updated successfully.", response);
+        // console.log("Adventure updated successfully.", response);
       })
       .catch((error) => {
         console.log("Error updating adventure.", error);
@@ -326,7 +326,7 @@ export default class Adventure extends Component {
   };
 
   chooseOption = (option, x) => {
-    console.log("OPTION");
+    // console.log("OPTION");
     //UPDATE & SAVE EXISTING EVENT
     this.setState({
       option1: "Generating Choice. Please wait...",
@@ -342,7 +342,7 @@ export default class Adventure extends Component {
       this.saveEvent();
       //INITIALIZE A NEW EVENT
       setTimeout(() => {
-        console.log("NEW EVENT");
+        // console.log("NEW EVENT");
         this.setState({
           event: {},
         });
@@ -361,7 +361,7 @@ export default class Adventure extends Component {
           .slice(0, 1200)
           .reverse()
           .join(" ");
-        console.log("prompty test", AIprompt);
+        // console.log("prompty test", AIprompt);
         openai
           .createCompletion(process.env.REACT_APP_API_ENGINE, {
             prompt: AIprompt,
@@ -372,7 +372,7 @@ export default class Adventure extends Component {
             presence_penalty: 0.0,
           })
           .then((response) => {
-            console.log("choose option test", response);
+            // console.log("choose option test", response);
             let reply = response.data.choices[0].text;
             while (reply[0] === "\n") {
               reply = reply.slice(1, reply.length);

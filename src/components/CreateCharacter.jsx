@@ -59,8 +59,7 @@ export default class CreateCharacter extends Component {
   }
 
   componentDidMount() {
-
-    let theUser = () => this.props.user ? this.props.user.id : null;
+    let theUser = () => (this.props.user ? this.props.user.id : null);
     this.setState({ user: theUser() });
     if (this.props.randomCharacter) {
       this.createRandomCharacter();
@@ -111,7 +110,7 @@ export default class CreateCharacter extends Component {
         Math.floor(Math.random() * CHARACTER_DEFAULTS.trait.length)
       ];
     let weakness = CHARACTER_DEFAULTS.trait.filter((t) => {
-      return t != ability;
+      return t !== ability;
     })[Math.floor(Math.random() * CHARACTER_DEFAULTS.trait.length - 1)];
 
     const character = {
@@ -148,15 +147,15 @@ export default class CreateCharacter extends Component {
 
   addCharacter = (character) => {
     if (
-      this.state.newCharacter.name.includes("Saad Iqbal") ||
-      this.state.newCharacter.name.includes("Saad")
+      this.state.newCharacter.name.toLowerCase().includes("saad iqbal") ||
+      this.state.newCharacter.name.toLowerCase().includes("saad")
     ) {
       // console.log("saad detected");
       character.image = "/images/class/saad.jpg";
     }
     if (
-      this.state.newCharacter.name.includes("Martin") ||
-      this.state.newCharacter.name.includes("Marty")
+      this.state.newCharacter.name.toLowerCase().includes("martin") ||
+      this.state.newCharacter.name.toLowerCase().includes("marty")
     ) {
       // console.log("marty detected");
       character.image = "/images/class/martin.jpg";

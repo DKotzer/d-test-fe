@@ -39,9 +39,7 @@ export default class CreateAdventure extends Component {
         .then((response) => {
           // console.log(response.data.characters);
           let characterFiltered = response.data.characters.filter((c) => {
-            if (c.user === this.props.user.id && c.user != "unknown") {
-              return c.user;
-            }
+            return c.user === this.props.user.id && c.user !== "unknown";
           });
           this.setState({
             characters: characterFiltered.reverse(),
@@ -114,7 +112,7 @@ export default class CreateAdventure extends Component {
             "danger"
           );
         } else {
-          console.log("Adventure created successfully.", response);
+          // console.log("Adventure created successfully.", response);
           response.data.adventure.events = [this.state.event];
           this.setState({
             newAdventure: response.data.adventure,
@@ -272,7 +270,7 @@ export default class CreateAdventure extends Component {
             "danger"
           );
         } else {
-          console.log("Event created successfully.", response);
+          // console.log("Event created successfully.", response);
           this.setState({
             event: response.data.event,
           });

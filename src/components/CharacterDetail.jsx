@@ -147,9 +147,13 @@ export default class CharacterDetail extends Component {
               {this.state.character.name} the {this.state.character.class}
             </Card.Title>
             <Card.Text className='character-backstory'>
-              <div className='character-backstory'>
-                <p className='overflow'>{this.state.character.backstory}</p>
-              </div>
+              <span className='character-backstory'>
+                <span className='overflow'>
+                  {this.state.character.backstory}
+                </span>
+              </span>
+              <br />
+              <br />
               Ability: {this.state.character.ability}
               <br />
               Weakness: {this.state.character.weakness}
