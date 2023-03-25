@@ -112,7 +112,7 @@ export default class Adventure extends Component {
       apiKey: process.env.REACT_APP_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
-    let previousLog = this.state.previousLog.join("");
+    let previousLog = this.state.event.fullLog.join("");
     let prompt = `Give ${this.state.character.name} 3 new, relevant, detailed, options for what to do next in the choose your own adventure game, keeping in mind context from above to make sure it is relevant. Avoid giving the same option multiple times. \n`;
     let AIprompt_holder = previousLog + "\n" + prompt;
     let AIprompt = AIprompt_holder.split(" ")
@@ -120,9 +120,7 @@ export default class Adventure extends Component {
       .slice(0, 1100)
       .reverse()
       .join(" ");
-
     // console.log("prompty 2", AIprompt);
-
     openai
       .createCompletion(process.env.REACT_APP_API_ENGINE, {
         prompt: AIprompt,
@@ -353,7 +351,7 @@ export default class Adventure extends Component {
         const openai = new OpenAIApi(configuration);
         let previousLog = this.state.previousLog.join("");
         let action = `${this.state.character.name} the ${this.state.character.class} chooses ${x}. ${option}.`;
-        let prompt = `Give a long, entertaining, detailed account of what happens next.`;
+        let prompt = `Progress the the story forward a short period of time. Give a clever, entertaining, detailed account of what happens next in an open ended way.`;
         let AIprompt_holder =
           previousLog + "\n" + action + "\n" + prompt + "\n";
         let AIprompt = AIprompt_holder.split(" ")
