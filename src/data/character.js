@@ -386,8 +386,8 @@ const DECOR = [
 const CLASS = ["Alchemist", "Archangel", "Archer", "Astronomer", "Assassin", "Bandit", "Bard", "Barbarian", "Beastmaster",
   "Berserker", "Bishop", "Blacksmith", "Brute", "Busker", "Cleric", "Centaur", "Corgi", "Cultist",
   "Crusader", "Cybernetic", "Dragon", "Dragonborn", "Druid", "Dwarf", "Engineer", "Ent",
-  "Faun", "Ghost", "Giant", "Gladiator", "Gnome", "Goblin", "Gunslinger", "Gypsy", "Hacker", "Headhunter", "Horseman", "Hunter", "Illusionist", "Inquisitor", "Inventor",
-  "Jester", "Knight", "Leader", "Librarian", "Mage", "Marine", "Medic", "Merchant",
+  "Faun", "Gambler", "Ghost", "Giant", "Gladiator", "Gnome", "Goblin", "Gunslinger", "Gypsy", "Hacker", "Headhunter", "Horseman", "Hunter", "Illusionist", "Inquisitor", "Inventor",
+  "Jester", "King", "Knight", "Leader", "Librarian", "Mage", "Marine", "Medic", "Merchant",
   "Monk", "Mystic", "Necromancer", "Ogre", "Orator", "Orc", "Outlaw", "Paladin", "Phantom", "Pirate",
   "Priest", "Programmer", "Psychic", "Ranger", "Rogue", "Robber", "Sapper", "Samurai", "Scholar", "Scout", "SEI Grad",
   "Shaman", "Sharpshooter", "Shapeshifter", "Skald", "Skirmisher", "Sniper", "Sorcerer", "Squire", "Spectre", "Spy",
@@ -504,11 +504,9 @@ const TRAIT = [
   "Yoga",
 ];
 
-let randomImages = [];
-const NUMRAND = 5;
-for (let i = 1; i < NUMRAND + 1; i++) {
-  randomImages.push("random" + i);
-}
+let randomImages = CLASS.map(element => element.toLowerCase());
+// const NUMRAND = randomImages.length;
+
 
 const RANDOM = randomImages;
 

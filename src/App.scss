@@ -42,6 +42,12 @@ body {
   color: white;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .right-nav {
   display: flex;
   flex-direction: row;
